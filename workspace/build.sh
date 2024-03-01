@@ -15,4 +15,5 @@ else
 fi
 
 # Build Kernel
+cd android-kernel
 BUILD_CONFIG=build.config build/build.sh
