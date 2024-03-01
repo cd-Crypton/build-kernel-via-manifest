@@ -13,6 +13,9 @@ sudo ln -sf ~/bin/repo /usr/bin/repo
 mkdir -p android-kernel
 cd android-kernel
 
+# Disable Color UI
+git config --global color.ui false
+
 # Initialized manifest
 repo init -u https://github.com/cd-Crypton/android_kernel_realme_sm6225-manifest -b android-13
 
