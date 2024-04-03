@@ -16,4 +16,4 @@ fi
 
 # Build Kernel
 cd android-kernel
-BUILD_CONFIG=build.config build/build.sh
+BUILD_CONFIG=build.config DTC=dtc build/build.sh 2>&1 | tee build.log
