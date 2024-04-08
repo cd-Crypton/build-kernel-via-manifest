@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Reinstall packages just to make sure, no harm anyway
-sudo apt-get install bison flex rsync -y
+sudo apt-get install bison flex rsync bison device-tree-compiler bc -y
 
 # Check if 'repo' command exists in PATH
 if ! command -v repo &> /dev/null; then
@@ -16,4 +16,4 @@ fi
 
 # Build Kernel
 cd android-kernel
-BUILD_CONFIG=build.config DTC=dtc build/build.sh 2>&1 | tee build.log
+BUILD_CONFIG=build.config build/build.sh 2>&1 | tee build.log
