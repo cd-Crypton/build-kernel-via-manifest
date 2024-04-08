@@ -1,4 +1,4 @@
 # Ignore
 **/.vscode
-**/android-kernel
+**/android
 **/download.txt

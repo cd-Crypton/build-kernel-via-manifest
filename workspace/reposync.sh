@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source ./vars.sh
+
 # Make sure to always install these packages to avoid build error abour rsycn, bison and flex
 sudo apt-get install bison flex rsync bison device-tree-compiler bc -y
 
@@ -15,14 +17,14 @@ else
 fi
 
 # Create directory for repo sync
-mkdir -p android-kernel
-cd android-kernel
+mkdir -p android
+cd android
 
 # Disable Color UI
 git config --global color.ui false
 
 # Initialized manifest
-repo init -u https://github.com/carlodandan/android_kernel_realme_sm6225-manifest -b OTHER
+repo init -u ${MANIFEST} -b ${MANIFEST_BRANCH}
 
 # Sync all repository inside the manifest
 repo sync
