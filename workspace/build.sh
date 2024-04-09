@@ -9,10 +9,17 @@ if ! command -v repo &> /dev/null; then
     mkdir -p ~/bin  # Create bin directory if it doesn't exist
     curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo  # Download 'repo' tool
     chmod a+x ~/bin/repo  # Make 'repo' executable
+    sudo ln -sf ~/bin/repo /usr/bin/repo
     echo "'repo' command installed successfully."
 else
     echo "'repo' command already exists."
 fi
+
+# This will only server as fallback step, in case kernel has git submodules inside the tree.
+# The name of the kernel directory depends on each kernel, so better to edit it.
+cd android/sm6375
+git submodule update --init --recursive
+cd ../..
 
 # Build Kernel
 # On most cases, you have to use the right config path for BUILD_CONFIG variable. By default, this script target a symlink.

@@ -11,6 +11,7 @@ if ! command -v repo &> /dev/null; then
     mkdir -p ~/bin  # Create bin directory if it doesn't exist
     curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo  # Download 'repo' tool
     chmod a+x ~/bin/repo  # Make 'repo' executable
+    sudo ln -sf ~/bin/repo /usr/bin/repo
     echo "'repo' command installed successfully."
 else
     echo "'repo' command already exists."
